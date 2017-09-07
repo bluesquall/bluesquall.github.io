@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Copying SSH keys to a remote machine | useful snippets</title>
+    <link rel="stylesheet" href="/bluesquall.github.io/css/style.css" />
+    <link rel="stylesheet" href="/bluesquall.github.io/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/bluesquall.github.io">Home</a></li>
+      
+      <li><a href="/bluesquall.github.io/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Copying SSH keys to a remote machine</span></h1>
+
+<h2 class="date">2017-09-07</h2>
+</div>
+
+<main>
+<p>Ideally, both source and destination machines have <code>ssh-copy-id</code> available. In
+that case, just:</p>
+
+<pre><code class="language-shell">$ ssh-copy-id -i ~/.ssh/id_rsa user@host
+</code></pre>
+
+<p>If the destination machine does not have <code>ssh-copy-id</code>, you can pipe output
+from <code>cat</code> through <code>ssh</code>.</p>
+
+<pre><code class="language-shell">$ cat ~/.ssh/id_rsa.pub | ssh user@host &quot;mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys
+</code></pre>
+
+<p>If you already have an entry for the destination machine in your
+<code>~/.ssh/config</code> and want to ignore the options specified there, use <code>-o</code> to
+override, or <code>-F \dev\null</code> to ignore the config entirely.</p>
+
+<hr />
+
+<p>sources &amp; references</p>
+
+<ul>
+<li><a href="http://www.commandlinefu.com/commands/view/188/copy-your-ssh-public-key-to-a-server-from-a-machine-that-doesnt-have-ssh-copy-id">commandlinefu</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  &copy; M J Stanway 2017 | <a href="https://github.com/bluesquall">Github</a>
+  
+  </footer>
+  </body>
+</html>
+
