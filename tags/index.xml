@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on useful snippets</title>
-    <link>bluesquall.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on useful snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Sep 2017 15:43:00 -0700</lastBuildDate>
     
-	<atom:link href="bluesquall.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rsa</title>
-      <link>bluesquall.github.io/tags/rsa/</link>
+      <link>/tags/rsa/</link>
       <pubDate>Thu, 07 Sep 2017 15:43:00 -0700</pubDate>
       
-      <guid>bluesquall.github.io/tags/rsa/</guid>
+      <guid>/tags/rsa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ssh</title>
-      <link>bluesquall.github.io/tags/ssh/</link>
+      <link>/tags/ssh/</link>
       <pubDate>Thu, 07 Sep 2017 15:43:00 -0700</pubDate>
       
-      <guid>bluesquall.github.io/tags/ssh/</guid>
+      <guid>/tags/ssh/</guid>
       <description></description>
     </item>
     
