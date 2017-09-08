@@ -32,6 +32,15 @@ $ cat ~/.ssh/id_rsa.pub | ssh user@host &amp;quot;mkdir -p ~/.ssh; cat &amp;gt;&
     </item>
     
     <item>
+      <title>replaying a text log on a serial port (using python)</title>
+      <link>/posts/replaying-a-text-log-on-a-serial-port/</link>
+      <pubDate>Tue, 22 Sep 2015 00:00:00 -0700</pubDate>
+      
+      <guid>/posts/replaying-a-text-log-on-a-serial-port/</guid>
+      <description>gist</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
