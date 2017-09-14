@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>useful snippets</title>
-    <link>/</link>
-    <description>Recent content on useful snippets</description>
+    <title>Posts on useful snippets</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on useful snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Sep 2017 15:43:00 -0700</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -38,15 +38,6 @@ $ cat ~/.ssh/id_rsa.pub | ssh user@host &amp;quot;mkdir -p ~/.ssh; cat &amp;gt;&
       
       <guid>/post/2015/09/22/replaying-a-text-log-on-a-serial-port-using-python/</guid>
       <description>gist</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Here I will collect useful snippets of code, command lines, and install notes.</description>
     </item>
     
   </channel>

@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/ssh-copy-id/</loc>
+    <loc>/post/2017/09/07/copying-ssh-keys-to-a-remote-machine/</loc>
     <lastmod>2017-09-07T15:43:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/testing/</loc>
+    <loc>/post/2017/09/07/testing/</loc>
     <lastmod>2017-09-07T14:59:59-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/replaying-a-text-log-on-a-serial-port/</loc>
+    <loc>/post/2015/09/22/replaying-a-text-log-on-a-serial-port-using-python/</loc>
     <lastmod>2015-09-22T00:00:00-07:00</lastmod>
   </url>
   
@@ -27,7 +27,7 @@
   </url>
   
   <url>
-    <loc>/posts/</loc>
+    <loc>/post/</loc>
     <lastmod>2017-09-07T15:43:00-07:00</lastmod>
     <priority>0</priority>
   </url>
