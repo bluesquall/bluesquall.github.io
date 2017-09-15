@@ -17,9 +17,10 @@
       <pubDate>Thu, 07 Sep 2017 15:43:00 -0700</pubDate>
       
       <guid>/post/2017/09/07/copying-ssh-keys-to-a-remote-machine/</guid>
-      <description>Ideally, both source and destination machines have ssh-copy-id available. In that case, just:
-$ ssh-copy-id -i ~/.ssh/id_rsa user@host  If the destination machine does not have ssh-copy-id, you can pipe output from cat through ssh.
-$ cat ~/.ssh/id_rsa.pub | ssh user@host &amp;quot;mkdir -p ~/.ssh; cat &amp;gt;&amp;gt; ~/.ssh/authorized_keys  If you already have an entry for the destination machine in your ~/.ssh/config and want to ignore the options specified there, use -o to override, or -F \dev\null to ignore the config entirely.</description>
+      <description>&lt;p&gt;Ideally, both source and destination machines have &lt;code&gt;ssh-copy-id&lt;/code&gt; available, but
+sometimes you have to pipe a &lt;code&gt;cat&lt;/code&gt; instead.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copying SSH keys to a remote machine | useful snippets</title>
-    <meta name="description" content="Ideally, both source and destination machines have ssh-copy-id available. In that case, just:
-$ ssh-copy-id -i ~/.ssh/id_rsa user@host  If the destination machine does not have ssh-copy-id, you can pipe output from cat through ssh.
-$ cat ~/.ssh/id_rsa.pub | ssh user@host &quot;mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys  If you already have an entry for the destination machine in your ~/.ssh/config and want to ignore the options specified there, use -o to override, or -F \dev\null to ignore the config entirely.">
+    <meta name="description" content="Ideally, both source and destination machines have ssh-copy-id available, but
+sometimes you have to pipe a cat instead.
+
+">
     <meta name="keywords" content="ssh, rsa">
     
     
@@ -19,9 +20,10 @@ $ cat ~/.ssh/id_rsa.pub | ssh user@host &quot;mkdir -p ~/.ssh; cat &gt;&gt; ~/.s
 
 
     <meta property="og:title" content="Copying SSH keys to a remote machine" />
-<meta property="og:description" content="Ideally, both source and destination machines have ssh-copy-id available. In that case, just:
-$ ssh-copy-id -i ~/.ssh/id_rsa user@host  If the destination machine does not have ssh-copy-id, you can pipe output from cat through ssh.
-$ cat ~/.ssh/id_rsa.pub | ssh user@host &quot;mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys  If you already have an entry for the destination machine in your ~/.ssh/config and want to ignore the options specified there, use -o to override, or -F \dev\null to ignore the config entirely." />
+<meta property="og:description" content="Ideally, both source and destination machines have ssh-copy-id available, but
+sometimes you have to pipe a cat instead.
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/2017/09/07/copying-ssh-keys-to-a-remote-machine/" />
 
@@ -149,13 +151,14 @@ article [itemprop="description"] {
   <article itemscope itemtype="http://schema.org/BlogPosting">
     
 <meta itemprop="name" content="Copying SSH keys to a remote machine">
-<meta itemprop="description" content="Ideally, both source and destination machines have ssh-copy-id available. In that case, just:
-$ ssh-copy-id -i ~/.ssh/id_rsa user@host  If the destination machine does not have ssh-copy-id, you can pipe output from cat through ssh.
-$ cat ~/.ssh/id_rsa.pub | ssh user@host &quot;mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys  If you already have an entry for the destination machine in your ~/.ssh/config and want to ignore the options specified there, use -o to override, or -F \dev\null to ignore the config entirely.">
+<meta itemprop="description" content="Ideally, both source and destination machines have ssh-copy-id available, but
+sometimes you have to pipe a cat instead.
+
+">
 
 
 <meta itemprop="dateModified" content="2017-09-07T15:43:00-07:00" />
-<meta itemprop="wordCount" content="83">
+<meta itemprop="wordCount" content="92">
 
 
 
@@ -182,8 +185,12 @@ $ cat ~/.ssh/id_rsa.pub | ssh user@host &quot;mkdir -p ~/.ssh; cat &gt;&gt; ~/.s
     
 
     <div itemprop="articleBody">
-      <p>Ideally, both source and destination machines have <code>ssh-copy-id</code> available. In
-that case, just:</p>
+      <p>Ideally, both source and destination machines have <code>ssh-copy-id</code> available, but
+sometimes you have to pipe a <code>cat</code> instead.</p>
+
+<p></p>
+
+<p>In that case, just:</p>
 
 <pre><code class="language-shell">$ ssh-copy-id -i ~/.ssh/id_rsa user@host
 </code></pre>
@@ -191,7 +198,7 @@ that case, just:</p>
 <p>If the destination machine does not have <code>ssh-copy-id</code>, you can pipe output
 from <code>cat</code> through <code>ssh</code>.</p>
 
-<pre><code class="language-shell">$ cat ~/.ssh/id_rsa.pub | ssh user@host &quot;mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys
+<pre><code class="language-shell">$ cat ~/.ssh/id_rsa.pub | ssh user@host &quot;mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys&quot;
 </code></pre>
 
 <p>If you already have an entry for the destination machine in your
@@ -205,7 +212,6 @@ override, or <code>-F \dev\null</code> to ignore the config entirely.</p>
 <ul>
 <li><a href="http://www.commandlinefu.com/commands/view/188/copy-your-ssh-public-key-to-a-server-from-a-machine-that-doesnt-have-ssh-copy-id">commandlinefu</a></li>
 </ul>
-
     </div>
     
     <footer>
@@ -224,7 +230,7 @@ override, or <code>-F \dev\null</code> to ignore the config entirely.</p>
   
     and tagged <a href="/tags/rsa/">rsa</a> and <a href="/tags/ssh/">ssh</a>
   
-  using <span itemprop="wordCount">83</span> words.
+  using <span itemprop="wordCount">92</span> words.
 </p>
 
       
