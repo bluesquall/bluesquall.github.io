@@ -6,10 +6,21 @@
     <description>Recent content in Posts on useful snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Sep 2017 15:43:00 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 14 Sep 2017 16:41:29 -0700</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>secure tunnels to localhost using ngrok</title>
+      <link>/post/2017/09/14/secure-tunnels-to-localhost-using-ngrok/</link>
+      <pubDate>Thu, 14 Sep 2017 16:41:29 -0700</pubDate>
+      
+      <guid>/post/2017/09/14/secure-tunnels-to-localhost-using-ngrok/</guid>
+      <description>&lt;p&gt;Sometimes you want to expose a local server to the internet.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Copying SSH keys to a remote machine</title>
