@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Csv on useful snippets</title>
+    <link>/tags/csv/</link>
+    <description>Recent content in Csv on useful snippets</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 May 2017 16:07:00 +0700</lastBuildDate>
+    
+	<atom:link href="/tags/csv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>adding weight history to Garmin Connect (in bulk)</title>
+      <link>/post/2017/05/03/adding-weight-history-to-garmin-connect-in-bulk/</link>
+      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
+      
+      <guid>/post/2017/05/03/adding-weight-history-to-garmin-connect-in-bulk/</guid>
+      <description>&lt;p&gt;Garmin Connect can now import &lt;code&gt;csv&lt;/code&gt; files from FitBit. This means that I can
+upload my old records of my weight to Garmin without having to enter each one
+manually. It will be nice to see everything I&amp;rsquo;ve recorded in Connect and on
+the app.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

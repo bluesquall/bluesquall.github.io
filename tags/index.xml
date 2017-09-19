@@ -6,10 +6,37 @@
     <description>Recent content in Tags on useful snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Sep 2017 16:41:29 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 03 May 2017 16:07:00 +0700</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Csv</title>
+      <link>/tags/csv/</link>
+      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
+      
+      <guid>/tags/csv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cut</title>
+      <link>/tags/cut/</link>
+      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
+      
+      <guid>/tags/cut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Garmin</title>
+      <link>/tags/garmin/</link>
+      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
+      
+      <guid>/tags/garmin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Http</title>
@@ -71,6 +98,24 @@
       <pubDate>Thu, 07 Sep 2017 15:43:00 -0700</pubDate>
       
       <guid>/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uniq</title>
+      <link>/tags/uniq/</link>
+      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
+      
+      <guid>/tags/uniq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>/tags/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vim/</guid>
       <description></description>
     </item>
     

@@ -44,6 +44,20 @@ sometimes you have to pipe a &lt;code&gt;cat&lt;/code&gt; instead.&lt;/p&gt;
     </item>
     
     <item>
+      <title>adding weight history to Garmin Connect (in bulk)</title>
+      <link>/post/2017/05/03/adding-weight-history-to-garmin-connect-in-bulk/</link>
+      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
+      
+      <guid>/post/2017/05/03/adding-weight-history-to-garmin-connect-in-bulk/</guid>
+      <description>&lt;p&gt;Garmin Connect can now import &lt;code&gt;csv&lt;/code&gt; files from FitBit. This means that I can
+upload my old records of my weight to Garmin without having to enter each one
+manually. It will be nice to see everything I&amp;rsquo;ve recorded in Connect and on
+the app.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>replaying a text log on a serial port (using python)</title>
       <link>/post/2015/09/22/replaying-a-text-log-on-a-serial-port-using-python/</link>
       <pubDate>Tue, 22 Sep 2015 00:00:00 -0700</pubDate>
@@ -59,6 +73,17 @@ sometimes you have to pipe a &lt;code&gt;cat&lt;/code&gt; instead.&lt;/p&gt;
       
       <guid>/about/</guid>
       <description>Here I will collect useful snippets of code, command lines, and install notes.</description>
+    </item>
+    
+    <item>
+      <title>vim cheatsheet</title>
+      <link>/cheat/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cheat/vim/</guid>
+      <description>&lt;p&gt;Tricks to remember in &lt;code&gt;vim&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
