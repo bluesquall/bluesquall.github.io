@@ -38,7 +38,7 @@ $ cat ~/.ssh/id_rsa.pub | ssh user@host &amp;#34;mkdir -p ~/.ssh; cat &amp;gt;&a
       <pubDate>Thu, 07 Sep 2017 14:59:59 -0700</pubDate>
       
       <guid>/posts/testing/</guid>
-      <description>Testing&amp;hellip; testing&amp;hellip;  (the first item) (the second item) (and the third)  </description>
+      <description>Testing&amp;hellip; testing&amp;hellip;  (the first item) (the second item) (and the third)  Is anyone there?</description>
     </item>
     
     <item>
