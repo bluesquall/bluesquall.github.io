@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>serial on useful snippets</title>
-    <link>/tags/serial/</link>
+    <link>bluesquall.github.io/tags/serial/</link>
     <description>Recent content in serial on useful snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; M J Stanway 2017-2021</copyright>
-    <lastBuildDate>Tue, 22 Sep 2015 00:00:00 -0700</lastBuildDate><atom:link href="/tags/serial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2015 00:00:00 -0700</lastBuildDate><atom:link href="bluesquall.github.io/tags/serial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>replaying a text log on a serial port (using python)</title>
-      <link>/posts/replaying-a-text-log-on-a-serial-port/</link>
+      <link>bluesquall.github.io/posts/replaying-a-text-log-on-a-serial-port/</link>
       <pubDate>Tue, 22 Sep 2015 00:00:00 -0700</pubDate>
       
-      <guid>/posts/replaying-a-text-log-on-a-serial-port/</guid>
+      <guid>bluesquall.github.io/posts/replaying-a-text-log-on-a-serial-port/</guid>
       <description>gist</description>
     </item>
     

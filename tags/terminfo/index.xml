@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>terminfo on useful snippets</title>
-    <link>/tags/terminfo/</link>
+    <link>bluesquall.github.io/tags/terminfo/</link>
     <description>Recent content in terminfo on useful snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; M J Stanway 2017-2021</copyright>
-    <lastBuildDate>Tue, 26 Jan 2021 13:38:00 -0700</lastBuildDate><atom:link href="/tags/terminfo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jan 2021 13:38:00 -0700</lastBuildDate><atom:link href="bluesquall.github.io/tags/terminfo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adding terminfo entries to a remote machine</title>
-      <link>/posts/ssh-copy-terminfo/</link>
+      <link>bluesquall.github.io/posts/ssh-copy-terminfo/</link>
       <pubDate>Tue, 26 Jan 2021 13:38:00 -0700</pubDate>
       
-      <guid>/posts/ssh-copy-terminfo/</guid>
+      <guid>bluesquall.github.io/posts/ssh-copy-terminfo/</guid>
       <description>How many times have you tried to run a terminal program on a remote machine and received an error like:
 Error opening terminal: xterm-kitty. or a warning like:
 WARNING: terminal is not fully functional /etc/hosts (press RETURN) You can:

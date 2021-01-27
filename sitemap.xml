@@ -3,72 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/ssh-copy-terminfo/</loc>
+    <loc>bluesquall.github.io/posts/ssh-copy-terminfo/</loc>
     <lastmod>2021-01-26T13:38:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/</loc>
+    <loc>bluesquall.github.io/posts/</loc>
     <lastmod>2021-01-26T13:38:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/ssh/</loc>
+    <loc>bluesquall.github.io/tags/ssh/</loc>
     <lastmod>2021-01-26T13:38:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>bluesquall.github.io/tags/</loc>
     <lastmod>2021-01-26T13:38:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/terminfo/</loc>
+    <loc>bluesquall.github.io/tags/terminfo/</loc>
     <lastmod>2021-01-26T13:38:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>bluesquall.github.io/</loc>
     <lastmod>2021-01-26T13:38:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/ssh-copy-id/</loc>
+    <loc>bluesquall.github.io/posts/ssh-copy-id/</loc>
     <lastmod>2017-09-07T15:43:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/rsa/</loc>
+    <loc>bluesquall.github.io/tags/rsa/</loc>
     <lastmod>2017-09-07T15:43:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/testing/</loc>
+    <loc>bluesquall.github.io/posts/testing/</loc>
     <lastmod>2017-09-07T14:59:59-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/python/</loc>
+    <loc>bluesquall.github.io/tags/python/</loc>
     <lastmod>2015-09-22T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/replaying-a-text-log-on-a-serial-port/</loc>
+    <loc>bluesquall.github.io/posts/replaying-a-text-log-on-a-serial-port/</loc>
     <lastmod>2015-09-22T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/serial/</loc>
+    <loc>bluesquall.github.io/tags/serial/</loc>
     <lastmod>2015-09-22T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
+    <loc>bluesquall.github.io/categories/</loc>
   </url>
   
 </urlset>
