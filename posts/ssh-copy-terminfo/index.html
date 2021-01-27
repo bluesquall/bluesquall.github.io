@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		
+
+		<title>Adding terminfo entries to a remote machine</title>
+
+		
+		<link rel="stylesheet" href="/css/colors-dark.min.14df29dc468d31c46cb59a9b259c6e5c1623b01cee7d55d63f81e588d3496fc6.css">
+
+		
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="/">useful snippets</a></h1>
+			<p></p>
+		</header>
+
+		<div id="page">
+			<div id="sidebar">
+				<nav>
+	
+		<ul class="nav">
+			
+				<li><a href="/"><span>Home</span></a></li>
+			
+				<li><a href="/tags/"><span>Tags</span></a></li>
+			
+		</ul>
+	
+</nav>
+
+			</div>
+
+			<div id="content">
+				
+	<article class="post">
+		<h1><a href="/posts/ssh-copy-terminfo/">Adding terminfo entries to a remote machine</a> </h1>
+
+		<div class="post-content"><p>How many times have you tried to run a terminal program on a remote machine and received an error
+like:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Error opening terminal: xterm-kitty.
+</code></pre></div><p>or a warning like:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">WARNING: terminal is not fully functional
+/etc/hosts  <span style="color:#719e07">(</span>press RETURN<span style="color:#719e07">)</span>
+</code></pre></div><p>You can:</p>
+<ol>
+<li>
+<p><code>export TERM=xterm</code> and see how far it gets you</p>
+</li>
+<li>
+<p>install the terminal emulator package you are using on the remote machine (e.g., <code>sudo apt-get install termite</code>), but this ranges from inconvenient to impossible.</p>
+</li>
+<li>
+<p>add a terminfo entry to the remote machine, <em>without installing the terminal emulator</em></p>
+</li>
+</ol>
+<hr>
+<p>If you already have the terminfo description for the emulator you are using, you can <code>rsync</code> it over
+to <code>/tmp</code>, then compile &amp; install it with <code>tic</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rsync /path/to/emu.terminfo remote-machine:/tmp
+ssh remote-machine sudo tic
+/tmp/emu.terminfo
+</code></pre></div><p>But even easier, you can automagically generate the terminfo for your current emulator and pipe it
+over ssh:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">infocmp | ssh remote-machine <span style="color:#2aa198">&#34;tic -x /dev/stdin&#34;</span>
+</code></pre></div><p>This is adapted from <a href="https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer">the fallback approach in the <code>kitty</code> FAQ.</a></p>
+<p>If the remote machine is very old and/or an odd minimal system, it may not have <code>/dev/stdin</code> and
+<code>tic</code> may not be able to open <code>/dev/stdin</code> or <code>-</code>. In that case, you can still make a file in <code>/tmp</code>
+and clean it up afterward:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">infocmp | ssh remote-machine <span style="color:#2aa198">&#34;cat &gt; /tmp/terminfo &amp;&amp; tic -x /tmp/terminfo; rm /tmp/terminfo&#34;</span>
+</code></pre></div><p>And if you don&rsquo;t want to remember that command line or skim the manpages, write a shell function or
+alias:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fish" data-lang="fish"><span style="color:#586e75"># ~/.config/fish/functions/ssh-copy-terminfo.fish
+</span><span style="color:#586e75"></span><span style="color:#719e07">function</span> ssh-copy-terminfo
+<span style="color:#719e07">set</span> remote <span style="color:#268bd2">$argv</span><span style="color:#719e07">[</span>1<span style="color:#719e07">]</span>
+
+  infocmp <span style="color:#719e07">|</span> ssh <span style="color:#268bd2">$remote</span> <span style="color:#2aa198">&#34;cat &gt; /tmp/terminfo &amp;&amp; tic -x /tmp/terminfo; rm /tmp/terminfo&#34;</span>
+<span style="color:#719e07">end</span>
+</code></pre></div><hr>
+<p>sources &amp; references</p>
+<ul>
+<li><a href="https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer">kitty FAQ</a></li>
+</ul>
+</div>
+
+		<p class="meta">Posted on <span class="postdate">2021-01-26</span></p>
+	</article>
+
+			</div>
+
+			<footer id="footer">
+				<p class="copyright">
+					
+						&copy; M J Stanway 2017-2021
+					
+				</p>
+			</footer>
+		</div>
+
+		
+	</body>
+</html>

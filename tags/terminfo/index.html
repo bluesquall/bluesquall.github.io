@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		
-			<link href="/tags/ssh/index.xml" rel="alternate" type="application/rss+xml" title="useful snippets" />
-			<link href="/tags/ssh/index.xml" rel="feed" type="application/rss+xml" title="useful snippets" />
+			<link href="/tags/terminfo/index.xml" rel="alternate" type="application/rss+xml" title="useful snippets" />
+			<link href="/tags/terminfo/index.xml" rel="feed" type="application/rss+xml" title="useful snippets" />
 		
 
-		<title>ssh</title>
+		<title>terminfo</title>
 
 		
 		<link rel="stylesheet" href="/css/colors-dark.min.14df29dc468d31c46cb59a9b259c6e5c1623b01cee7d55d63f81e588d3496fc6.css">
@@ -52,18 +52,6 @@ WARNING: terminal is not fully functional /etc/hosts (press RETURN) You can:
 			</div>
 
 			<p class="meta">Posted on <span class="postdate">2021-01-26</span></p>
-		</article>
-	
-		<article class="post">
-			<h1><a href="/posts/ssh-copy-id/">Copying SSH keys to a remote machine</a> </h1>
-
-			<div class="post-content">
-				<p>Ideally, both source and destination machines have ssh-copy-id available. In that case, just:
-$ ssh-copy-id -i ~/.ssh/id_rsa user@host If the destination machine does not have ssh-copy-id, you can pipe output from cat through ssh.
-$ cat ~/.ssh/id_rsa.pub | ssh user@host &#34;mkdir -p ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys If you already have an entry for the destination machine in your ~/.ssh/config and want to ignore the options specified there, use -o to override, or -F \dev\null to ignore the config entirely.  … </p>
-			</div>
-
-			<p class="meta">Posted on <span class="postdate">2017-09-07</span></p>
 		</article>
 	
 

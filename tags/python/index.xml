@@ -1,22 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on useful snippets</title>
+    <title>python on useful snippets</title>
     <link>/tags/python/</link>
-    <description>Recent content in Python on useful snippets</description>
+    <description>Recent content in python on useful snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2015 00:00:00 -0700</lastBuildDate>
-    
-	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; M J Stanway 2017-2021</copyright>
+    <lastBuildDate>Tue, 22 Sep 2015 00:00:00 -0700</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>replaying a text log on a serial port (using python)</title>
-      <link>/post/2015/09/22/replaying-a-text-log-on-a-serial-port-using-python/</link>
+      <link>/posts/replaying-a-text-log-on-a-serial-port/</link>
       <pubDate>Tue, 22 Sep 2015 00:00:00 -0700</pubDate>
       
-      <guid>/post/2015/09/22/replaying-a-text-log-on-a-serial-port-using-python/</guid>
+      <guid>/posts/replaying-a-text-log-on-a-serial-port/</guid>
       <description>gist</description>
     </item>
     

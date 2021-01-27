@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on useful snippets</title>
@@ -6,76 +6,28 @@
     <description>Recent content in Tags on useful snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 May 2017 16:07:00 +0700</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; M J Stanway 2017-2021</copyright>
+    <lastBuildDate>Tue, 26 Jan 2021 13:38:00 -0700</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Csv</title>
-      <link>/tags/csv/</link>
-      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
+      <title>ssh</title>
+      <link>/tags/ssh/</link>
+      <pubDate>Tue, 26 Jan 2021 13:38:00 -0700</pubDate>
       
-      <guid>/tags/csv/</guid>
+      <guid>/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cut</title>
-      <link>/tags/cut/</link>
-      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
+      <title>terminfo</title>
+      <link>/tags/terminfo/</link>
+      <pubDate>Tue, 26 Jan 2021 13:38:00 -0700</pubDate>
       
-      <guid>/tags/cut/</guid>
+      <guid>/tags/terminfo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Garmin</title>
-      <link>/tags/garmin/</link>
-      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
-      
-      <guid>/tags/garmin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Http</title>
-      <link>/tags/http/</link>
-      <pubDate>Thu, 14 Sep 2017 16:41:29 -0700</pubDate>
-      
-      <guid>/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Localhost</title>
-      <link>/tags/localhost/</link>
-      <pubDate>Thu, 14 Sep 2017 16:41:29 -0700</pubDate>
-      
-      <guid>/tags/localhost/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ngrok</title>
-      <link>/tags/ngrok/</link>
-      <pubDate>Thu, 14 Sep 2017 16:41:29 -0700</pubDate>
-      
-      <guid>/tags/ngrok/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Tue, 22 Sep 2015 00:00:00 -0700</pubDate>
-      
-      <guid>/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rsa</title>
+      <title>rsa</title>
       <link>/tags/rsa/</link>
       <pubDate>Thu, 07 Sep 2017 15:43:00 -0700</pubDate>
       
@@ -84,38 +36,20 @@
     </item>
     
     <item>
-      <title>Serial</title>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Tue, 22 Sep 2015 00:00:00 -0700</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>serial</title>
       <link>/tags/serial/</link>
       <pubDate>Tue, 22 Sep 2015 00:00:00 -0700</pubDate>
       
       <guid>/tags/serial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>/tags/ssh/</link>
-      <pubDate>Thu, 07 Sep 2017 15:43:00 -0700</pubDate>
-      
-      <guid>/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Uniq</title>
-      <link>/tags/uniq/</link>
-      <pubDate>Wed, 03 May 2017 16:07:00 +0700</pubDate>
-      
-      <guid>/tags/uniq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>/tags/vim/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/vim/</guid>
       <description></description>
     </item>
     
