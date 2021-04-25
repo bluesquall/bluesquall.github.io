@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>useful snippets</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://bluesquall.github.io/atom.xml">
+      
+
+      
+          <link rel="stylesheet" href="https://bluesquall.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+    
+        
+                
+                    <header>
+                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;bluesquall.github.io">
+                                <span itemprop="name">Home
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;bluesquall.github.io&#x2F;categories">
+                                <span itemprop="name">Categories
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;bluesquall.github.io&#x2F;tags">
+                                <span itemprop="name">Tags
+                                </span></a>
+                        
+                        </nav>
+                    </header>
+                
+            
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Adding terminfo entries to a remote machine</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>2 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2021-01-26
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>How many times have you tried to run a terminal program on a remote machine and received an error
+like:</p>
+<pre><code class="language-shell" data-lang="shell">Error opening terminal: xterm-kitty.
+</code></pre>
+<p>or a warning like:</p>
+<pre><code class="language-shell" data-lang="shell">WARNING: terminal is not fully functional
+/etc/hosts  (press RETURN)
+</code></pre>
+<p>You can:</p>
+<ol>
+<li>
+<p><code>export TERM=xterm</code> and see how far it gets you</p>
+</li>
+<li>
+<p>install the terminal emulator package you are using on the remote machine (e.g., <code>sudo apt-get install termite</code>), but this ranges from inconvenient to impossible.</p>
+</li>
+<li>
+<p>add a terminfo entry to the remote machine, <em>without installing the terminal emulator</em></p>
+</li>
+</ol>
+<hr />
+<p>If you already have the terminfo description for the emulator you are using, you can <code>rsync</code> it over
+to <code>/tmp</code>, then compile &amp; install it with <code>tic</code>:</p>
+<pre><code class="language-shell" data-lang="shell">rsync /path/to/emu.terminfo remote-machine:/tmp
+ssh remote-machine sudo tic
+/tmp/emu.terminfo
+</code></pre>
+<p>But even easier, you can automagically generate the terminfo for your current emulator and pipe it
+over ssh:</p>
+<pre><code class="language-shell" data-lang="shell">infocmp | ssh remote-machine &quot;tic -x /dev/stdin&quot;
+</code></pre>
+<p>This is adapted from <a href="https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer">the fallback approach in the <code>kitty</code> FAQ.</a></p>
+<p>If the remote machine is very old and/or an odd minimal system, it may not have <code>/dev/stdin</code> and
+<code>tic</code> may not be able to open <code>/dev/stdin</code> or <code>-</code>. In that case, you can still make a file in <code>/tmp</code>
+and clean it up afterward:</p>
+<pre><code class="language-shell" data-lang="shell">infocmp | ssh remote-machine &quot;cat &gt; /tmp/terminfo &amp;&amp; tic -x /tmp/terminfo; rm /tmp/terminfo&quot;
+</code></pre>
+<p>And if you don't want to remember that command line or skim the manpages, write a shell function or
+alias:</p>
+<pre><code class="language-fish" data-lang="fish"># ~/.config/fish/functions/ssh-copy-terminfo.fish
+function ssh-copy-terminfo
+set remote $argv[1]
+
+  infocmp | ssh $remote &quot;cat &gt; /tmp/terminfo &amp;&amp; tic -x /tmp/terminfo; rm /tmp/terminfo&quot;
+end
+</code></pre>
+<hr />
+<p>sources &amp; references</p>
+<ul>
+<li><a href="https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer">kitty FAQ</a></li>
+</ul>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by M J Stanway
+                
+                
+                
+            </p>
+            
+            
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

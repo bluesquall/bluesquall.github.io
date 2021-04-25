@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bluesquall.github.io/sitemap.xml

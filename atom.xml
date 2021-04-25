@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>useful snippets</title>
+	<link href="https://bluesquall.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://bluesquall.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-01-26T13:38:00-07:00</updated>
+	<id>https://bluesquall.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Adding terminfo entries to a remote machine</title>
+		<published>2021-01-26T13:38:00-07:00</published>
+		<updated>2021-01-26T13:38:00-07:00</updated>
+		<link href="https://bluesquall.github.io/ssh-copy-terminfo/" type="text/html"/>
+		<id>https://bluesquall.github.io/ssh-copy-terminfo/</id>
+		<content type="html">&lt;p&gt;How many times have you tried to run a terminal program on a remote machine and received an error
+like:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;Error opening terminal: xterm-kitty.
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;or a warning like:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;WARNING: terminal is not fully functional
+&#x2F;etc&#x2F;hosts  (press RETURN)
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;export TERM=xterm&lt;&#x2F;code&gt; and see how far it gets you&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;install the terminal emulator package you are using on the remote machine (e.g., &lt;code&gt;sudo apt-get install termite&lt;&#x2F;code&gt;), but this ranges from inconvenient to impossible.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;add a terminfo entry to the remote machine, &lt;em&gt;without installing the terminal emulator&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;If you already have the terminfo description for the emulator you are using, you can &lt;code&gt;rsync&lt;&#x2F;code&gt; it over
+to &lt;code&gt;&#x2F;tmp&lt;&#x2F;code&gt;, then compile &amp;amp; install it with &lt;code&gt;tic&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;rsync &#x2F;path&#x2F;to&#x2F;emu.terminfo remote-machine:&#x2F;tmp
+ssh remote-machine sudo tic
+&#x2F;tmp&#x2F;emu.terminfo
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;But even easier, you can automagically generate the terminfo for your current emulator and pipe it
+over ssh:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;infocmp | ssh remote-machine &amp;quot;tic -x &#x2F;dev&#x2F;stdin&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This is adapted from &lt;a href=&quot;https:&#x2F;&#x2F;sw.kovidgoyal.net&#x2F;kitty&#x2F;faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer&quot;&gt;the fallback approach in the &lt;code&gt;kitty&lt;&#x2F;code&gt; FAQ.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If the remote machine is very old and&#x2F;or an odd minimal system, it may not have &lt;code&gt;&#x2F;dev&#x2F;stdin&lt;&#x2F;code&gt; and
+&lt;code&gt;tic&lt;&#x2F;code&gt; may not be able to open &lt;code&gt;&#x2F;dev&#x2F;stdin&lt;&#x2F;code&gt; or &lt;code&gt;-&lt;&#x2F;code&gt;. In that case, you can still make a file in &lt;code&gt;&#x2F;tmp&lt;&#x2F;code&gt;
+and clean it up afterward:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;infocmp | ssh remote-machine &amp;quot;cat &amp;gt; &#x2F;tmp&#x2F;terminfo &amp;amp;&amp;amp; tic -x &#x2F;tmp&#x2F;terminfo; rm &#x2F;tmp&#x2F;terminfo&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And if you don&#x27;t want to remember that command line or skim the manpages, write a shell function or
+alias:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-fish&quot; data-lang=&quot;fish&quot;&gt;# ~&#x2F;.config&#x2F;fish&#x2F;functions&#x2F;ssh-copy-terminfo.fish
+function ssh-copy-terminfo
+set remote $argv[1]
+
+  infocmp | ssh $remote &amp;quot;cat &amp;gt; &#x2F;tmp&#x2F;terminfo &amp;amp;&amp;amp; tic -x &#x2F;tmp&#x2F;terminfo; rm &#x2F;tmp&#x2F;terminfo&amp;quot;
+end
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;sources &amp;amp; references&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sw.kovidgoyal.net&#x2F;kitty&#x2F;faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer&quot;&gt;kitty FAQ&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Copying SSH keys to a remote machine</title>
+		<published>2017-09-07T15:43:00-07:00</published>
+		<updated>2017-09-07T15:43:00-07:00</updated>
+		<link href="https://bluesquall.github.io/ssh-copy-id/" type="text/html"/>
+		<id>https://bluesquall.github.io/ssh-copy-id/</id>
+		<content type="html">&lt;p&gt;Ideally, both source and destination machines have &lt;code&gt;ssh-copy-id&lt;&#x2F;code&gt; available. In
+that case, just:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;$ ssh-copy-id -i ~&#x2F;.ssh&#x2F;id_rsa user@host
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If the destination machine does not have &lt;code&gt;ssh-copy-id&lt;&#x2F;code&gt;, you can pipe output
+from &lt;code&gt;cat&lt;&#x2F;code&gt; through &lt;code&gt;ssh&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;$ cat ~&#x2F;.ssh&#x2F;id_rsa.pub | ssh user@host &amp;quot;mkdir -p ~&#x2F;.ssh; cat &amp;gt;&amp;gt; ~&#x2F;.ssh&#x2F;authorized_keys
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If you already have an entry for the destination machine in your
+&lt;code&gt;~&#x2F;.ssh&#x2F;config&lt;&#x2F;code&gt; and want to ignore the options specified there, use &lt;code&gt;-o&lt;&#x2F;code&gt; to
+override, or &lt;code&gt;-F \dev\null&lt;&#x2F;code&gt; to ignore the config entirely.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;sources &amp;amp; references&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.commandlinefu.com&#x2F;commands&#x2F;view&#x2F;188&#x2F;copy-your-ssh-public-key-to-a-server-from-a-machine-that-doesnt-have-ssh-copy-id&quot;&gt;commandlinefu&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>testing</title>
+		<published>2017-09-07T14:59:59-07:00</published>
+		<updated>2017-09-07T14:59:59-07:00</updated>
+		<link href="https://bluesquall.github.io/testing/" type="text/html"/>
+		<id>https://bluesquall.github.io/testing/</id>
+		<content type="html">&lt;h1 id=&quot;testing&quot;&gt;Testing...&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;testing-1&quot;&gt;testing...&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;(the first item)&lt;&#x2F;li&gt;
+&lt;li&gt;(the second item)&lt;&#x2F;li&gt;
+&lt;li&gt;(and the third)&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Is anyone there?&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>replaying a text log on a serial port (using python)</title>
+		<published>2015-09-22T00:00:00+00:00</published>
+		<updated>2015-09-22T00:00:00+00:00</updated>
+		<link href="https://bluesquall.github.io/replaying-a-text-log-on-a-serial-port/" type="text/html"/>
+		<id>https://bluesquall.github.io/replaying-a-text-log-on-a-serial-port/</id>
+		<content type="html">&lt;p&gt;{{ gist(url=&#x27;https:&#x2F;&#x2F;gist.github.com&#x2F;bluesquall&#x2F;68d78ea0bc55249616b5, class=&amp;quot;gist&amp;quot;) }}&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
